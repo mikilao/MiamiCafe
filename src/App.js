@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import About from "./About";
 
 const allCategories = ["all",...new Set( items.map((item) => item.category)
@@ -25,14 +31,38 @@ function App() {
 
   return (
     <main>
+    
       <section className="menu">
+      <Router>
+      <nav className='navbar'>
+          <ul>
+            <li >
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/Menu">Menu</Link>
+            </li>
+          </ul>
+        </nav>
         <div className="title">
           <h2>Miami Cafe 2021</h2>
-        </div>
-        
+        </div> 
         <Categories categories={categories} filterItems={filterItems} />
-        <About />
-        <Menu items={menuItems} />
+        
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/Menu">
+             <Menu items={menuItems} />
+          </Route>
+       
+        </Switch>
+       
+        </Router>
       </section>
     </main>
   );

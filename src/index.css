@@ -68,10 +68,22 @@ body {
   justify-content: center;
   background: var(--clr-red-light);
 }
-article {
+.about{
   font-size: medium;
   width: 875px;
   height: 400px;
+}
+li{
+  padding-left: 20px;
+  margin-top: auto; 
+  text-decoration: none;
+}
+ul {
+    display: inline-flex;
+   
+    font-weight: "bold";
+    color: "#0DADEA";
+
 }
 .filter-btn {
   background: transparent;
