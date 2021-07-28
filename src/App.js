@@ -9,6 +9,8 @@ import {
   Link
 } from "react-router-dom";
 import About from "./About";
+import Home from "./Home";
+import ImageSlider from "./ImageSlider";
 
 const allCategories = ["all",...new Set( items.map((item) => item.category)
 //filters the categories without duplication
@@ -36,7 +38,7 @@ function App() {
       <Router>
       <nav className='navbar'>
           <ul>
-            <li >
+            <li>
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -49,14 +51,20 @@ function App() {
         </nav>
         <div className="title">
           <h2>Miami Cafe 2021</h2>
+          <h3> open 7 days a week</h3>
+          <ImageSlider />
         </div> 
-        <Categories categories={categories} filterItems={filterItems} />
+       
         
         <Switch>
+        <Route exact component={Home} path="/">
+            <Home />
+          </Route>
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/Menu">
+          <Route path="/Menu"> 
+          <Categories categories={categories} filterItems={filterItems} />
              <Menu items={menuItems} />
           </Route>
        

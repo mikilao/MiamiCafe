@@ -46,7 +46,13 @@ body {
   font-family:'Montserrat', sans-serif;
   font-size:35px;
 }
-
+.navbar{
+  font-size: medium;
+  
+  background-color: hsl(205, 89%, 70%);
+  margin-top: -80px;
+  
+}
 
 .menu {
   padding: 5rem 0;
@@ -80,7 +86,7 @@ li{
 }
 ul {
     display: inline-flex;
-   
+    list-style: none;
     font-weight: "bold";
     color: "#0DADEA";
 
