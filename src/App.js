@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
+//import data from './data';
 import items from "./data";
 import {
   BrowserRouter as Router,
@@ -10,7 +11,8 @@ import {
 } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
-import ImageSlider from "./ImageSlider";
+//import ImageSlider from "./ImageSlider";
+import menu from "./data";
 
 const allCategories = ["all",...new Set( items.map((item) => item.category)
 //filters the categories without duplication
@@ -52,13 +54,13 @@ function App() {
         <div className="title">
           <h2>Miami Cafe 2021</h2>
           <h3> open 7 days a week</h3>
-          <ImageSlider />
-        </div> 
+       
+               </div> 
        
         
         <Switch>
         <Route exact component={Home} path="/">
-            <Home />
+            <Home slides={menu} />
           </Route>
           <Route path="/about">
             <About />
